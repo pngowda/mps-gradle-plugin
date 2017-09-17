@@ -12,7 +12,7 @@ ext.versionMinor = 0
 if (project.hasProperty('forceCI') || project.hasProperty('teamcity')) {
     version de.itemis.mps.gradle.GitBasedVersioning.getVersion(versionMajor, versionMinor)
 } else {
-    version "${versionMajor}.${versionMinor}-SNAPSHOT"
+    version "${versionMajor}.${versionMinor}.1"
 }
 
 task wrapper(type: Wrapper) {
@@ -37,7 +37,7 @@ dependencies {
 publishing {
     repositories {
         maven {
-            url 'https://projects.itemis.de/nexus/content/repositories/mbeddr'
+            url 'https://projects.itemis.de/nexus/content/repositories/test_repo/'
             if (project.hasProperty('nexusUsername')) {
                 credentials {
                     username project.nexusUsername
